@@ -1,0 +1,12 @@
+__pycache__/
+classify_saved_models/
+data.db
+requirements.txt
+requirement_copy.txt
+venv/
+log/
+final_soy_prod.xlsx
+etc/
+var/
+temp_images/
+
