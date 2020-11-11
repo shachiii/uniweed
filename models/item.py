@@ -9,7 +9,6 @@ class WeedProductModel(db.Model):
     crop = db.Column(db.String(80))
     product = db.Column(db.String(80))
     dose = db.Column(db.String(80))
-    # ------19-10-20-----Country----------------------------------------
     country = db.Column(db.String(80))
     # ------19-10-20----------------------------------------------------
 # ------19-10-20-----Country----------------------------------------
