@@ -3,8 +3,6 @@ import pandas as pd
 
 def filldb():
     df = pd.read_excel('final_soy_prod.xlsx')
-    df.to_csv('product_list.csv', index = None, header=True)
-    df = pd.read_csv('product_list.csv')
     # print(df)
 
     for i in range(df.shape[0]):
