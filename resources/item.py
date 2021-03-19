@@ -106,9 +106,16 @@ class Item(Resource):
 
             # ----19-10-20----Checking products in database----------------------------------------------
             print(data['crop'], data['country'])
-            print(WeedProductModel.find_product(weed_name,data['crop'].title(), data['country'].title()))
 
-            products = list(map(lambda x: {'prod': x.product, 'dose': x.dose}, WeedProductModel.find_product(weed_name,data['crop'].title(), data['country'].title())))
+            products = []
+            # products = list(map(lambda x: {'prod': x.product, 'dose': x.dose} if x.product else [], WeedProductModel.find_product(weed_name,data['crop'].title(), data['country'].title())))
+            
+            x = WeedProductModel.find_product(weed_name,data['crop'].title(), data['country'].title())
+
+            for prod in x:
+                if prod.product:
+                    products.append({'prod': prod.product, 'dose': prod.dose})
+
 
             # products = list(map(lambda x: {'prod': x.product, 'dose': x.dose}, WeedProductModel.find_by_name(weed_name)))
             # ----19-10-20-------------------------------------------------------
